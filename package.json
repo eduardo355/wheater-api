@@ -4,7 +4,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "dev": "nodemon app/index.js"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +19,7 @@
     "response-time": "^2.3.2"
   },
   "devDependencies": {
+    "@flydotio/dockerfile": "^0.5.9",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/response-time": "^2.3.8",

@@ -10,8 +10,10 @@ export const getWeatherByCity = async (req, res) => {
 
   try {
     const data = await getWeatherDataByCity(city)
+
     return res.json(data)
   } catch (error) {
+    console.log(error)
     return res.status(500).json({ error: error })
   }
 }
