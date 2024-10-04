@@ -53,7 +53,7 @@ Before you begin, make sure you have the following installed:
 
 5. **Run the application**:
    ```bash
-   npm start
+   npm run dev
    ```
 
 6. The API will be running on `http://localhost:3000`.
