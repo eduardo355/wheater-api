@@ -1,4 +1,5 @@
 import {
+  getAddress,
   getWeatherDataByCity,
   getWeatherDataByCoordinates,
 } from '../models/weatherModel.js'
@@ -14,6 +15,22 @@ export const getWeatherByCity = async (req, res) => {
     return res.json(data)
   } catch (error) {
     console.log(error)
+    return res.status(500).json({ error: error })
+  }
+}
+
+export const getAddressByCoordinates = async (req, res) => {
+  const { latitude, longitude } = req.params
+
+  if (!latitude || !longitude)
+    return res
+      .status(400)
+      .json({ error: 'Latitude and Longitude are required' })
+
+  try {
+    const data = await getAddress(latitude, longitude)
+    return res.json(data)
+  } catch (error) {
     return res.status(500).json({ error: error })
   }
 }
